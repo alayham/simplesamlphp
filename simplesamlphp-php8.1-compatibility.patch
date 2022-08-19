@@ -1,0 +1,14 @@
+diff --git a/lib/SimpleSAML/Logger/FileLoggingHandler.php b/lib/SimpleSAML/Logger/FileLoggingHandler.php
+index c07ec21fe..6d334e920 100644
+--- a/lib/SimpleSAML/Logger/FileLoggingHandler.php
++++ b/lib/SimpleSAML/Logger/FileLoggingHandler.php
+@@ -117,7 +117,8 @@ class FileLoggingHandler implements LoggingHandlerInterface
+                 }
+ 
+                 array_push($formats, $matches[0]);
+-                array_push($replacements, strftime($format));
++                // array_push($replacements, strftime($format));
++                array_push($replacements, date('Y-m-d H:i:s'));
+             }
+ 
+             $string = str_replace($formats, $replacements, $string);
